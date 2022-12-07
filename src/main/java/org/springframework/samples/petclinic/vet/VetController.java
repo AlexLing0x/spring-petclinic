@@ -26,6 +26,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.sound.midi.Soundbank;
+
 /**
  * @author Juergen Hoeller
  * @author Mark Fisher
@@ -73,6 +75,7 @@ class VetController {
 		// objects so it is simpler for JSon/Object mapping
 		Vets vets = new Vets();
 		vets.getVetList().addAll(this.vetRepository.findAll());
+		System.out.println("showResourcesVetList:" + System.currentTimeMillis());
 		return vets;
 	}
 
